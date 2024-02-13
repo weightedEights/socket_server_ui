@@ -4,6 +4,7 @@ Server file
 
 
 import socket
+import funcs
 
 
 # SERVER_HOST = "localhost"
@@ -33,8 +34,9 @@ def main() -> None:
                 print(f"Server connection closed. Farewell, World.")
                 break
 
-            if "FUNC1" in receive_data:
-                print(f"Running FUNC1")
+            if "func1" in receive_data:
+                if not funcs.func1():
+                    print(f"func1 failed")
 
         except Exception as e:
             print(f"{e}")
